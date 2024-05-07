@@ -1,6 +1,6 @@
-# LuviConsole
+# Luvi Console for Godot 4.2+
 
-LuviConsole is a simple GUI in-game commands console for Godot 4.
+`LuviConsole` is a simple GUI in-game commands console for Godot 4.2+ that allows you to execute commands in real-time. It is lightweight, efficient, and easy to use, making it ideal for debugging and testing your Godot projects. `LuviConsole` supports command history, allowing you to navigate through previous commands and execute them again with ease. With `LuviConsole`, you can quickly test and debug your game without having to exit the game or switch to an external console application. It is a valuable tool for developers who want to streamline their workflow and improve their productivity when working on Godot projects.
 
 ![Luvi Console for Godot Sample](images/01.gif)
 
@@ -26,14 +26,16 @@ LuviConsole is a simple GUI in-game commands console for Godot 4.
 5. Use the arrow keys (up and down) to navigate through command history.
 6. Enjoy the convenience of an in-game console for debugging and testing!
 
-### Custom Commands
+## Tutorial
 
-1. Create any class that you want to use and then make it to node class.
-2. In the class, reference the `LuviConsole` class as variable.
+### Create Custom Commands
+
+1. Create a new class that extends `Node`.
+2. In the new class, make the reference the `LuviConsole` class as variable.
 3. in the `_ready()` function, bind the signal of `on_command_execute` to receive the command arguments.
 4. In the binded function, create the string receiver statement.
 
-Example of the code (from gif).
+Example of the code (from the header's gif):
 
 ```gdscript
 extends Node
@@ -76,7 +78,7 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
 
 ## Credits
 
