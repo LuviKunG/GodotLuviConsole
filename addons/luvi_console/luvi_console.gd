@@ -66,26 +66,25 @@ func _input(event) -> void:
 	if event is InputEventKey:
 		if event.is_released() and event.keycode == KEY_F1:
 			is_showing = not is_showing
-			if _is_showing:
-				if not log_command_execute.is_empty():
-					if event.is_released() and event.keycode == KEY_UP:
-						if log_command_index < 0:
-							log_command_index = log_command_execute.size() - 1
-						else:
-							log_command_index = log_command_index - 1
-							if log_command_index < 0:
-								log_command_index = 0
-						_update_command_input(log_command_index)
-						_update_command_capacity()
-					if event.is_released() and event.keycode == KEY_DOWN:
-						if log_command_index < 0:
-							log_command_index = 0
-						else:
-							log_command_index = log_command_index + 1
-							if log_command_index > log_command_execute.size() - 1:
-								log_command_index = log_command_execute.size() - 1
-						_update_command_input(log_command_index)
-						_update_command_capacity()
+		if _is_showing and not log_command_execute.is_empty():
+			if event.is_released() and event.keycode == KEY_UP:
+				if log_command_index < 0:
+					log_command_index = log_command_execute.size() - 1
+				else:
+					log_command_index = log_command_index - 1
+					if log_command_index < 0:
+						log_command_index = 0
+				_update_command_input(log_command_index)
+				_update_command_capacity()
+			if event.is_released() and event.keycode == KEY_DOWN:
+				if log_command_index < 0:
+					log_command_index = 0
+				else:
+					log_command_index = log_command_index + 1
+					if log_command_index > log_command_execute.size() - 1:
+						log_command_index = log_command_execute.size() - 1
+				_update_command_input(log_command_index)
+				_update_command_capacity()
 
 func _split_command_text(value: String) -> Array[String]:
 	var in_quote: bool = false
