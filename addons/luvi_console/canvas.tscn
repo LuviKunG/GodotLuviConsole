@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://d06g7yv66mtwd"]
+
+[ext_resource type="Script" path="res://addons/luvi_console/luvi_console.gd" id="1_0cga7"]
+
+[node name="LuviConsole" type="CanvasLayer"]
+process_mode = 3
+process_thread_group = 1
+process_thread_group_order = 0
+process_thread_messages = 0
+script = ExtResource("1_0cga7")
+
+[node name="Container" type="MarginContainer" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Container"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Content" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Console" type="RichTextLabel" parent="Container/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+scroll_following = true
+shortcut_keys_enabled = false
+
+[node name="Input" type="LineEdit" parent="Container/Content"]
+layout_mode = 2
+placeholder_text = "Enter the command here..."
